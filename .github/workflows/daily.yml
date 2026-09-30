@@ -11,7 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Append daily log entry
-        run: echo "Daily run: $(date -u +'%Y-%m-%d %H:%M UTC')" >> DAILY_LOG.md
+        run: |
+          echo "Daily run - $(date -u +'%Y-%m-%d %H:%M UTC')" >> DAILY_LOG.md
       - name: Commit and push
         run: |
           git config user.name "nohithreddy"
